@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="application.scene.controller.CarEditWindowController"
+      prefWidth="500" spacing="5"
+>
+    <padding>
+        <Insets topRightBottomLeft="10"/>
+    </padding>
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxWidth="500">
+        <VBox spacing="5">
+            <padding>
+                <Insets topRightBottomLeft="10"/>
+            </padding>
+            <HBox alignment="CENTER_LEFT">
+                <Label text="VIN" minWidth="200" maxWidth="200"/>
+                <TextField promptText="Enter the VIN..." HBox.hgrow="ALWAYS" fx:id="_vinTextField"/>
+            </HBox>
+            <HBox alignment="CENTER_LEFT">
+                <Label text="MAKE" minWidth="200" maxWidth="200"/>
+                <TextField promptText="Enter the make of the car..." HBox.hgrow="ALWAYS" fx:id="_makeTextField"/>
+                <ComboBox minWidth="25" maxWidth="25" fx:id="_makeComboBox"/>
+            </HBox>
+            <HBox alignment="CENTER_LEFT">
+                <Label text="MODEL" minWidth="200" maxWidth="200"/>
+                <TextField promptText="Enter the model of the car..." HBox.hgrow="ALWAYS" fx:id="_modelTextField"/>
+            </HBox>
+            <HBox alignment="CENTER_LEFT">
+                <Label text="MANUFACTURE DATE" minWidth="200" maxWidth="200"/>
+                <DatePicker promptText="Enter the date of manufacture..." HBox.hgrow="ALWAYS" maxWidth="1000"
+                            editable="false" fx:id="_manufactureDatePicker"
+                />
+            </HBox>
+            <HBox alignment="CENTER_LEFT">
+                <Label text="LICENSE PLATE" minWidth="200" maxWidth="200"/>
+                <TextField promptText="Enter the license plate number..." HBox.hgrow="ALWAYS" fx:id="_licenseTextField"/>
+            </HBox>
+            <HBox alignment="CENTER_LEFT">
+                <Label text="REGISTRATION DATE" minWidth="200" maxWidth="200"/>
+                <DatePicker promptText="Enter the date of registration..." HBox.hgrow="ALWAYS" maxWidth="1000"
+                            editable="false" fx:id="_registrationDatePicker"
+                />
+            </HBox>
+        </VBox>
+    </ScrollPane>
+    <HBox spacing="5">
+        <Button text="Apply" onAction="#onApply"/>
+        <Button text="Delete" onAction="#onDelete"/>
+    </HBox>
+</VBox>

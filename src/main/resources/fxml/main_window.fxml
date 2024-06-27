@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="application.scene.controller.MainWindowController"
+      prefWidth="1000" maxHeight="700"
+>
+    <MenuBar>
+        <Menu text="File">
+            <MenuItem text="New" accelerator="Shortcut+N" onAction="#onNew"/>
+            <MenuItem text="Open" accelerator="Shortcut+O" onAction="#onOpen"/>
+            <MenuItem text="Save" accelerator="Shortcut+S" onAction="#onSave"/>
+            <SeparatorMenuItem/>
+            <MenuItem text="Print" accelerator="Shortcut+P" onAction="#onPrint"/>
+            <SeparatorMenuItem/>
+            <MenuItem text="Exit" accelerator="Alt+F4"/>
+        </Menu>
+        <Menu text="Maintenance">
+            <MenuItem text="Add..." accelerator="F5" onAction="#onAdd"/>
+            <MenuItem text="Clear..." onAction="#onClear"/>
+            <MenuItem text="Delete..." onAction="#onDelete"/>
+        </Menu>
+        <Menu text="Help">
+            <MenuItem text="User Manual" accelerator="Shortcut+H" onAction="#onOpenUserManual"/>
+        </Menu>
+    </MenuBar>
+    <VBox spacing="10">
+        <padding>
+            <Insets topRightBottomLeft="10"/>
+        </padding>
+        <Label text="CAR" styleClass="h1"/>
+        <Separator/>
+        <HBox spacing="20" styleClass="content-box" onMouseClicked="#onEditCar">
+            <padding>
+                <Insets topRightBottomLeft="10"/>
+            </padding>
+            <VBox HBox.hgrow="ALWAYS" maxWidth="1000">
+                <HBox>
+                    <Label text="VIN" />
+                    <Region HBox.hgrow="ALWAYS" maxWidth="1000"/>
+                    <Label text="JNHF762JBU6798" fx:id="_vinLabel"/>
+                </HBox>
+                <HBox>
+                    <Label text="MAKE"/>
+                    <Region HBox.hgrow="ALWAYS" maxWidth="1000"/>
+                    <Label text="AUDI" fx:id="_makeLabel"/>
+                </HBox>
+                <HBox>
+                    <Label text="MODEL"/>
+                    <Region HBox.hgrow="ALWAYS" maxWidth="1000"/>
+                    <Label text="A4" fx:id="_modelLabel"/>
+                </HBox>
+                <HBox>
+                    <Label text="MANUFACTURE DATE"/>
+                    <Region HBox.hgrow="ALWAYS" maxWidth="1000"/>
+                    <Label text="2.5.2024" fx:id="_manufactureDateLabel"/>
+                </HBox>
+            </VBox>
+            <VBox HBox.hgrow="ALWAYS" maxWidth="1000">
+                <HBox>
+                    <Label text="LICENSE PLATE"/>
+                    <Region HBox.hgrow="ALWAYS" maxWidth="1000"/>
+                    <Label text="AAA-111" fx:id="_licenseLabel"/>
+                </HBox>
+                <HBox>
+                    <Label text="REGISTRATION DATE"/>
+                    <Region HBox.hgrow="ALWAYS" maxWidth="1000"/>
+                    <Label text="5.5.2024" fx:id="_registrationDateLabel"/>
+                </HBox>
+            </VBox>
+        </HBox>
+        <Label text="MAINTENANCE" styleClass="h1"/>
+        <Separator/>
+        <HBox spacing="5">
+            <TextField promptText="Enter a keyword..." minWidth="150" maxWidth="150" fx:id="_searchTextField"/>
+            <Button text="Search" onAction="#onSearch"/>
+            <Region HBox.hgrow="ALWAYS" maxWidth="1000"/>
+            <ComboBox minWidth="120" maxWidth="120" fx:id="_mileageTypeComboBox"/>
+        </HBox>
+        <Separator/>
+        <HBox>
+            <padding>
+                <Insets left="15" right="15"/>
+            </padding>
+            <Label text="DATE" styleClass="h2" minWidth="200" maxWidth="200"/>
+            <Label text="DESCRIPTION" styleClass="h2" minWidth="400" maxWidth="400"/>
+            <Label text="REPAIRER" styleClass="h2"/>
+            <Region HBox.hgrow="ALWAYS" maxWidth="1000"/>
+            <Label text="MILEAGE" styleClass="h2"/>
+        </HBox>
+        <ScrollPane hbarPolicy="NEVER" prefHeight="1000" fitToWidth="true">
+            <VBox spacing="5" fx:id="_serviceRecordVBox">
+                <padding>
+                    <Insets topRightBottomLeft="5"/>
+                </padding>
+            </VBox>
+        </ScrollPane>
+    </VBox>
+</VBox>

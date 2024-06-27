@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import util.fx.scene.IntegerField?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="application.scene.controller.ServiceEditWindowController"
+      maxWidth="500" spacing="5"
+>
+    <padding>
+        <Insets topRightBottomLeft="10"/>
+    </padding>
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxHeight="600">
+        <VBox spacing="5">
+            <padding>
+                <Insets topRightBottomLeft="10"/>
+            </padding>
+            <HBox>
+                <Label text="DESCRIPTION" minWidth="150" maxWidth="150"/>
+                <TextArea promptText="Enter a short description of the service..." HBox.hgrow="ALWAYS"
+                          minHeight="80" maxHeight="80" fx:id="_descriptionTextArea"
+                />
+            </HBox>
+            <HBox alignment="CENTER_LEFT">
+                <Label text="REPAIRER" minWidth="150" maxWidth="150"/>
+                <TextField promptText="Enter the name of the repairer..." HBox.hgrow="ALWAYS"
+                           fx:id="_repairerTextField"
+                />
+            </HBox>
+            <HBox alignment="CENTER_LEFT">
+                <Label text="MILEAGE" minWidth="150" maxWidth="150"/>
+                <IntegerField promptText="Enter the mileage..." HBox.hgrow="ALWAYS"
+                              fx:id="_mileageIntegerField" minValue="0" maxValue="5000000" value="1000"
+                />
+            </HBox>
+            <HBox alignment="CENTER_LEFT">
+                <Label text="DATE" minWidth="150" maxWidth="150"/>
+                <DatePicker promptText="Enter the date of service..." HBox.hgrow="ALWAYS" maxWidth="1000"
+                            editable="false" fx:id="_datePicker"
+                />
+            </HBox>
+            <Region minHeight="5" maxHeight="5"/>
+            <Separator/>
+            <Region minHeight="5" maxHeight="5"/>
+            <HBox spacing="2">
+                <Button text="PART NUMBER" styleClass="tab-header" minWidth="150" maxWidth="150"/>
+                <Button text="DESCRIPTION" styleClass="tab-header" HBox.hgrow="ALWAYS" maxWidth="1000"/>
+                <Button text="QTY" styleClass="tab-header" minWidth="60" maxWidth="60"/>
+            </HBox>
+            <VBox spacing="2" fx:id="_partListVBox"/>
+            <HBox alignment="CENTER_RIGHT" spacing="2">
+                <Button text="+" onAction="#onAddPart" minWidth="50" maxWidth="50"/>
+                <Button text="-" onAction="#onRemovePart" minWidth="50" maxWidth="50"/>
+            </HBox>
+        </VBox>
+    </ScrollPane>
+    <HBox spacing="5">
+        <Button text="Apply" onAction="#onApply"/>
+        <Button text="Delete" onAction="#onDelete"/>
+    </HBox>
+</VBox>

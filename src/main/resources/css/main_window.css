@@ -1,0 +1,3 @@
+.menu:hover > .label, .menu:showing > .label, .menu-item:hover > .label, .menu-item:focused > .label {
+    -fx-text-fill: white;
+}
